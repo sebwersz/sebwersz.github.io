@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今日吃瓜taipei nana - 城市生活影像社区,官方记录台北日常</title>
+<meta name="description" content="今日吃瓜taipei nana 官方网站，专注台北城市生活影像与在地故事的原创视频社区，持续更新创作者日常记录、街巷探索与同好分享。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3b3a'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23ffb648'/%3E%3Cpath d='M27 24l14 8-14 8z' fill='%230f3b3a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --gn-ink:#0f2f2e;
+  --gn-ink-2:#17403e;
+  --gn-teal:#0f3b3a;
+  --gn-mint:#2f9c86;
+  --gn-amber:#ffb648;
+  --gn-amber-deep:#f08c1e;
+  --gn-sand:#f6efe3;
+  --gn-cream:#fbf8f1;
+  --gn-line:#e2d9c8;
+  --gn-text:#233a38;
+  --gn-muted:#6d807c;
+  --gn-shadow:0 12px 32px rgba(15,47,46,.12);
+  --gn-radius:16px;
+  --gn-max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--gn-text);
+  background:var(--gn-cream);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;line-height:1.35;color:var(--gn-ink)}
+p{margin:0}
+.gn-wrap{max-width:var(--gn-max);margin:0 auto;padding:0 22px}
+
+/* ============ 吸顶区：公告条 + 页头 ============ */
+.gn-sticky{position:sticky;top:0;z-index:60;box-shadow:0 2px 14px rgba(15,47,46,.08)}
+.gn-notice{
+  background:linear-gradient(90deg,var(--gn-teal),var(--gn-ink-2) 55%,#1f5a50);
+  color:#e9f5ef;font-size:13.5px;
+}
+.gn-notice .gn-wrap{display:flex;align-items:center;gap:12px;min-height:40px;padding-top:6px;padding-bottom:6px;flex-wrap:wrap}
+.gn-notice-tag{
+  flex:0 0 auto;background:var(--gn-amber);color:#3a2400;font-weight:700;
+  font-size:12px;padding:2px 9px;border-radius:20px;letter-spacing:.5px;
+}
+.gn-notice-list{display:flex;gap:26px;overflow:hidden;flex:1 1 auto;min-width:0}
+.gn-notice-list span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.gn-notice-list b{color:var(--gn-amber);font-weight:600}
+.gn-notice-close{background:none;border:1px solid rgba(233,245,239,.4);color:#e9f5ef;border-radius:8px;font-size:12px;padding:2px 8px;flex:0 0 auto}
+.gn-notice-close:hover{background:rgba(233,245,239,.12)}
+
+.gn-header{background:rgba(251,248,241,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--gn-line)}
+.gn-header .gn-wrap{display:flex;align-items:center;gap:20px;min-height:66px}
+.gn-brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.gn-brand-mark{width:40px;height:40px;border-radius:12px;background:var(--gn-teal);display:grid;place-items:center;flex:0 0 auto}
+.gn-brand-mark svg{width:22px;height:22px}
+.gn-brand-text{display:flex;flex-direction:column;line-height:1.15}
+.gn-brand-text b{font-size:16px;letter-spacing:.4px;color:var(--gn-ink)}
+.gn-brand-text small{font-size:10.5px;color:var(--gn-muted);letter-spacing:1.6px;text-transform:uppercase}
+.gn-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.gn-nav a{
+  font-size:14.5px;color:var(--gn-ink-2);padding:8px 12px;border-radius:9px;transition:.2s;
+}
+.gn-nav a:hover{background:#e7f0ea;color:var(--gn-teal)}
+.gn-head-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.gn-search{position:relative;display:flex;align-items:center}
+.gn-search input{
+  width:176px;border:1px solid var(--gn-line);background:#fff;border-radius:24px;
+  padding:8px 36px 8px 14px;font-size:13.5px;color:var(--gn-text);outline:none;transition:.25s;
+}
+.gn-search input:focus{border-color:var(--gn-mint);box-shadow:0 0 0 3px rgba(47,156,134,.16);width:210px}
+.gn-search button{
+  position:absolute;right:5px;top:50%;transform:translateY(-50%);
+  border:none;background:var(--gn-teal);color:#fff;width:26px;height:26px;border-radius:50%;font-size:13px;line-height:1;
+}
+.gn-search-tip{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:1px solid var(--gn-line);
+  border-radius:12px;box-shadow:var(--gn-shadow);padding:8px;font-size:13px;display:none;z-index:70;
+}
+.gn-search-tip.show{display:block}
+.gn-search-tip em{font-style:normal;color:var(--gn-muted);font-size:12px;display:block;padding:4px 6px}
+.gn-search-tip a{display:block;padding:6px 8px;border-radius:8px;color:var(--gn-ink-2)}
+.gn-search-tip a:hover{background:#eef6f2}
+.gn-btn{
+  border:none;border-radius:24px;padding:9px 18px;font-size:14px;font-weight:600;
+  background:var(--gn-amber);color:#3a2400;transition:.2s;white-space:nowrap;
+}
+.gn-btn:hover{background:var(--gn-amber-deep);transform:translateY(-1px)}
+.gn-btn-ghost{background:transparent;border:1.5px solid var(--gn-teal);color:var(--gn-teal)}
+.gn-btn-ghost:hover{background:var(--gn-teal);color:#fff}
+.gn-burger{display:none;background:none;border:1.5px solid var(--gn-line);border-radius:10px;width:40px;height:38px;padding:0}
+.gn-burger span{display:block;width:18px;height:2px;background:var(--gn-ink);margin:4px auto;border-radius:2px;transition:.2s}
+
+/* ============ 通用 section ============ */
+.gn-section{padding:64px 0;scroll-margin-top:120px}
+.gn-section-alt{background:var(--gn-sand)}
+.gn-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+  letter-spacing:2px;color:var(--gn-mint);text-transform:uppercase;margin-bottom:12px;
+}
+.gn-kicker::before{content:"";width:22px;height:2px;background:var(--gn-mint);border-radius:2px}
+.gn-h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.3px}
+.gn-sub{color:var(--gn-muted);font-size:15px;margin-top:10px;max-width:760px}
+.gn-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+
+/* ============ 首屏 ============ */
+.gn-hero{position:relative;background:linear-gradient(160deg,#0f3b3a,#17403e 48%,#1f5a50);color:#eaf4ee;overflow:hidden;padding:0}
+.gn-hero::after{
+  content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,rgba(255,182,72,.36),transparent 66%);pointer-events:none;
+}
+.gn-hero .gn-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding-top:58px;padding-bottom:64px;align-items:center}
+.gn-hero-brandline{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.2px;color:#bfe3d6;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:5px 12px;border-radius:20px;margin-bottom:18px}
+.gn-hero-brandline i{width:7px;height:7px;border-radius:50%;background:var(--gn-amber);display:inline-block}
+.gn-hero h1{font-size:clamp(30px,4.4vw,48px);color:#fff;letter-spacing:-.5px;line-height:1.2}
+.gn-hero-lead{margin-top:16px;font-size:15.5px;color:#cfe4da;max-width:520px}
+.gn-hero-desc{margin-top:18px;font-size:14.5px;color:#b6d3c6;max-width:560px}
+.gn-hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.gn-hero-stats{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.gn-stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 16px;min-width:120px}
+.gn-stat b{display:block;font-size:24px;color:var(--gn-amber);letter-spacing:-.5px}
+.gn-stat span{font-size:12.5px;color:#bfe3d6}
+.gn-hero-visual{position:relative}
+.gn-hero-frame{border-radius:22px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.16)}
+.gn-hero-frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gn-hero-badge{
+  position:absolute;left:-14px;bottom:-18px;background:#fff;color:var(--gn-ink);border-radius:14px;
+  padding:12px 16px;box-shadow:var(--gn-shadow);display:flex;align-items:center;gap:10px;font-size:13px;
+}
+.gn-hero-badge b{color:var(--gn-teal);font-size:16px}
+.gn-hero-badge .gn-dot{width:9px;height:9px;border-radius:50%;background:#e14b3b;box-shadow:0 0 0 4px rgba(225,75,59,.18)}
+
+/* ============ 关键词解析正文 ============ */
+.gn-about{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start}
+.gn-about-card{background:#fff;border:1px solid var(--gn-line);border-radius:var(--gn-radius);padding:24px;box-shadow:var(--gn-shadow)}
+.gn-about-card h3{font-size:18px;margin-bottom:10px}
+.gn-about-card p{font-size:14.5px;color:#3d5250;margin-bottom:12px}
+.gn-about-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.gn-about-list li{font-size:14px;color:#3d5250;padding-left:22px;position:relative}
+.gn-about-list li::before{content:"◆";position:absolute;left:0;top:0;color:var(--gn-mint);font-size:11px}
+.gn-longtext p{font-size:14.8px;color:#38504d;margin-bottom:14px;text-align:justify}
+.gn-longtext h3{font-size:18px;margin:22px 0 10px}
+.gn-quotebar{border-left:4px solid var(--gn-amber);background:#fff;padding:14px 18px;border-radius:0 12px 12px 0;font-size:14px;color:#4a5f5c;margin:18px 0}
+
+/* ============ 视频卡片 ============ */
+.gn-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gn-video-grid.gn-two{grid-template-columns:repeat(2,1fr)}
+.gn-card{
+  background:#fff;border:1px solid var(--gn-line);border-radius:var(--gn-radius);overflow:hidden;
+  transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;
+}
+.gn-card:hover{transform:translateY(-4px);box-shadow:var(--gn-shadow)}
+.gn-thumb{position:relative;overflow:hidden;background:#dce8e2}
+.gn-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.gn-card:hover .gn-thumb img{transform:scale(1.05)}
+.gn-thumb-mask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,47,46,0) 45%,rgba(15,47,46,.72))}
+.gn-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);transition:.25s;
+}
+.gn-card:hover .gn-play{background:var(--gn-amber);transform:translate(-50%,-50%) scale(1.08)}
+.gn-play svg{width:18px;height:18px;margin-left:3px}
+.gn-chip{
+  position:absolute;top:12px;left:12px;background:rgba(15,59,58,.86);color:#eaf4ee;
+  font-size:11.5px;padding:3px 10px;border-radius:20px;letter-spacing:.4px;backdrop-filter:blur(4px);
+}
+.gn-dur{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.66);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:6px}
+.gn-card-body{padding:15px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.gn-card-title{font-size:16px;font-weight:700;line-height:1.45;color:var(--gn-ink)}
+.gn-card-desc{font-size:13.2px;color:var(--gn-muted);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gn-tags{display:flex;gap:6px;flex-wrap:wrap}
+.gn-tag{font-size:11.5px;color:var(--gn-teal);background:#e7f2ec;border-radius:6px;padding:2px 8px}
+.gn-card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px dashed var(--gn-line)}
+.gn-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gn-muted)}
+.gn-avatar{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;flex:0 0 auto}
+.gn-av-a{background:#2f9c86}.gn-av-b{background:#e07b39}.gn-av-c{background:#5b7dbb}
+.gn-av-d{background:#b25a8c}.gn-av-e{background:#7a8f3c}.gn-av-f{background:#c25b4a}
+.gn-actions{display:flex;gap:6px}
+.gn-act{
+  border:1px solid var(--gn-line);background:#fff;border-radius:20px;font-size:12px;
+  padding:4px 10px;color:var(--gn-muted);display:inline-flex;align-items:center;gap:4px;transition:.18s;
+}
+.gn-act:hover{border-color:var(--gn-mint);color:var(--gn-teal)}
+.gn-act.on{background:#fdecec;border-color:#e9a2a2;color:#c0392b}
+.gn-act.on-save{background:#eaf6ee;border-color:#8fce9e;color:#2f7d4f}
+.gn-act-num{font-variant-numeric:tabular-nums}
+
+/* ============ 焦点内容 ============ */
+.gn-focus{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.gn-focus-main .gn-thumb img{aspect-ratio:16/10}
+.gn-focus-main .gn-card-title{font-size:21px}
+.gn-focus-side{display:grid;gap:16px}
+.gn-mini{display:flex;gap:12px;background:#fff;border:1px solid var(--gn-line);border-radius:14px;padding:10px;transition:.22s}
+.gn-mini:hover{box-shadow:var(--gn-shadow);transform:translateX(3px)}
+.gn-mini-thumb{flex:0 0 116px;border-radius:10px;overflow:hidden;position:relative}
+.gn-mini-thumb img{width:100%;height:74px;object-fit:cover}
+.gn-mini-body{display:flex;flex-direction:column;gap:5px;min-width:0}
+.gn-mini-body b{font-size:14px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gn-mini-body span{font-size:12px;color:var(--gn-muted)}
+
+/* ============ 专题 ============ */
+.gn-special{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gn-special-item{position:relative;border-radius:18px;overflow:hidden;min-height:200px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--gn-shadow)}
+.gn-special-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gn-special-item::after{content:"";position:absolute;inset:0;background:linear-gradient(190deg,rgba(15,47,46,.05) 30%,rgba(15,47,46,.88))}
+.gn-special-body{position:relative;z-index:2;padding:18px}
+.gn-special-body b{font-size:17px;display:block;margin-bottom:6px}
+.gn-special-body p{font-size:12.8px;color:#d3e6dd;line-height:1.6;margin-bottom:8px}
+.gn-state{display:inline-block;font-size:11.5px;background:var(--gn-amber);color:#3a2400;border-radius:6px;padding:2px 8px;font-weight:700}
+
+/* ============ 创作者 ============ */
+.gn-creators{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gn-creator{background:#fff;border:1px solid var(--gn-line);border-radius:var(--gn-radius);padding:20px 18px;text-align:center;transition:.24s}
+.gn-creator:hover{transform:translateY(-4px);box-shadow:var(--gn-shadow);border-color:#cde3d7}
+.gn-creator-av{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-size:24px;font-weight:700;color:#fff;box-shadow:0 6px 16px rgba(15,47,46,.18)}
+.gn-creator b{font-size:16px}
+.gn-creator .gn-field{font-size:12px;color:var(--gn-mint);margin:4px 0 8px;letter-spacing:.3px}
+.gn-creator p{font-size:12.6px;color:var(--gn-muted);line-height:1.65;min-height:60px}
+.gn-creator-data{display:flex;justify-content:center;gap:16px;font-size:12px;color:var(--gn-muted);border-top:1px dashed var(--gn-line);padding-top:10px;margin-top:8px}
+.gn-creator-data b{display:block;font-size:14px;color:var(--gn-ink)}
+.gn-creator .gn-act{margin-top:12px;width:100%;justify-content:center}
+
+/* ============ 影像墙 ============ */
+.gn-wall{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:110px;gap:14px}
+.gn-wall figure{margin:0;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(15,47,46,.1)}
+.gn-wall img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gn-wall figure:hover img{transform:scale(1.07)}
+.gn-wall figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;color:#fff;font-size:12.5px;
+  background:linear-gradient(180deg,transparent,rgba(15,47,46,.85));
+}
+.gn-w-a{grid-column:span 3;grid-row:span 2}
+.gn-w-b{grid-column:span 3;grid-row:span 1}
+.gn-w-c{grid-column:span 2;grid-row:span 1}
+.gn-w-d{grid-column:span 1;grid-row:span 1}
+.gn-w-e{grid-column:span 2;grid-row:span 1}
+.gn-w-f{grid-column:span 2;grid-row:span 1}
+
+/* ============ 评价 ============ */
+.gn-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gn-review{background:#fff;border:1px solid var(--gn-line);border-radius:16px;padding:20px;position:relative;transition:.22s}
+.gn-review:hover{box-shadow:var(--gn-shadow);transform:translateY(-3px)}
+.gn-review::before{content:"“";position:absolute;top:6px;right:16px;font-size:44px;color:#e4eee7;font-family:Georgia,serif;line-height:1}
+.gn-review p{font-size:13.8px;color:#3d5250;line-height:1.75;position:relative;z-index:1}
+.gn-review-foot{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:12.5px;color:var(--gn-muted)}
+.gn-review-foot b{color:var(--gn-ink);font-size:13px}
+.gn-stars{color:var(--gn-amber-deep);font-size:12px;letter-spacing:1px}
+
+/* ============ 数据榜单 ============ */
+.gn-rank{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gn-rank-col{background:#fff;border:1px solid var(--gn-line);border-radius:var(--gn-radius);padding:20px}
+.gn-rank-col h3{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.gn-rank-col h3 i{width:6px;height:16px;border-radius:3px;background:var(--gn-mint);display:inline-block}
+.gn-rank-col:nth-child(2) h3 i{background:var(--gn-amber-deep)}
+.gn-rank-col:nth-child(3) h3 i{background:#b25a8c}
+.gn-rank-list{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.gn-rank-list li{display:flex;align-items:center;gap:10px;font-size:13.5px}
+.gn-rank-no{width:22px;height:22px;border-radius:7px;background:#eef4f0;color:var(--gn-teal);font-size:12px;font-weight:700;display:grid;place-items:center;flex:0 0 auto}
+.gn-rank-list li:nth-child(1) .gn-rank-no{background:var(--gn-amber);color:#3a2400}
+.gn-rank-list li:nth-child(2) .gn-rank-no{background:#cfe4da;color:var(--gn-teal)}
+.gn-rank-list span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gn-rank-list em{font-style:normal;font-size:12px;color:var(--gn-muted)}
+
+/* ============ 文章 / 随笔 ============ */
+.gn-stories{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gn-story{background:#fff;border:1px solid var(--gn-line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.gn-story .gn-story-meta{font-size:12px;color:var(--gn-mint);letter-spacing:.5px}
+.gn-story b{font-size:16.5px;line-height:1.5}
+.gn-story p{font-size:13.5px;color:var(--gn-muted);line-height:1.75}
+.gn-story a.gn-story-more{font-size:13px;color:var(--gn-teal);font-weight:600;margin-top:auto}
+
+/* ============ 灵感 / 工具 ============ */
+.gn-inspire{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:stretch}
+.gn-inspire-panel{background:linear-gradient(150deg,#153f3d,#0f2f2e);color:#e6f2ec;border-radius:20px;padding:28px;position:relative;overflow:hidden}
+.gn-inspire-panel::after{content:"";position:absolute;right:-70px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,72,.3),transparent 65%)}
+.gn-inspire-panel h3{font-size:20px;color:#fff;position:relative;z-index:1}
+.gn-inspire-panel p{font-size:13.8px;color:#bcd7cb;margin-top:10px;position:relative;z-index:1}
+.gn-inspire-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}
+.gn-inspire-chips button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#dff0e7;border-radius:20px;padding:6px 14px;font-size:13px;transition:.2s}
+.gn-inspire-chips button:hover,.gn-inspire-chips button.on{background:var(--gn-amber);color:#3a2400;border-color:var(--gn-amber)}
+.gn-inspire-out{margin-top:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px 16px;font-size:13.5px;color:#d5e9df;min-height:66px;position:relative;z-index:1}
+.gn-inspire-out b{color:var(--gn-amber)}
+.gn-inspire-side{display:grid;gap:14px}
+.gn-toolrow{display:flex;gap:12px;background:#fff;border:1px solid var(--gn-line);border-radius:14px;padding:16px;align-items:flex-start}
+.gn-toolrow .gn-tool-ico{width:38px;height:38px;border-radius:11px;background:#e7f2ec;color:var(--gn-teal);display:grid;place-items:center;font-size:17px;flex:0 0 auto}
+.gn-toolrow b{font-size:14.5px;display:block;margin-bottom:4px}
+.gn-toolrow span{font-size:12.8px;color:var(--gn-muted);line-height:1.6}
+
+/* ============ 企业动态时间线 ============ */
+.gn-timeline{position:relative;padding-left:26px;display:grid;gap:22px}
+.gn-timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gn-mint),#dfe9e3)}
+.gn-tl-item{position:relative}
+.gn-tl-item::before{content:"";position:absolute;left:-26px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gn-mint);box-shadow:0 0 0 3px #eaf4ee}
+.gn-tl-date{font-size:12px;color:var(--gn-mint);letter-spacing:.6px;font-weight:700}
+.gn-tl-item b{display:block;font-size:15.5px;margin:3px 0 4px}
+.gn-tl-item p{font-size:13.5px;color:var(--gn-muted);line-height:1.7}
+
+/* ============ 合作 + FAQ ============ */
+.gn-partners{display:flex;flex-wrap:wrap;gap:12px}
+.gn-partner{border:1px solid var(--gn-line);background:#fff;border-radius:12px;padding:12px 20px;font-size:13.5px;color:var(--gn-ink-2);font-weight:600;letter-spacing:.3px;transition:.2s}
+.gn-partner:hover{border-color:var(--gn-mint);color:var(--gn-teal);transform:translateY(-2px)}
+.gn-faq{display:grid;gap:10px;margin-top:26px}
+.gn-faq details{background:#fff;border:1px solid var(--gn-line);border-radius:12px;padding:0 18px;transition:.2s}
+.gn-faq details[open]{border-color:#cfe4da;box-shadow:0 6px 18px rgba(15,47,46,.07)}
+.gn-faq summary{cursor:pointer;list-style:none;padding:15px 0;font-size:14.5px;font-weight:600;color:var(--gn-ink);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gn-faq summary::-webkit-details-marker{display:none}
+.gn-faq summary::after{content:"+";font-size:18px;color:var(--gn-mint);transition:.2s;font-weight:400}
+.gn-faq details[open] summary::after{transform:rotate(45deg)}
+.gn-faq p{font-size:13.5px;color:var(--gn-muted);padding:0 0 16px;line-height:1.75}
+
+/* ============ 投稿 / 联系 ============ */
+.gn-cta{background:linear-gradient(135deg,#0f3b3a,#1f5a50);color:#e6f2ec;border-radius:22px;padding:38px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;position:relative;overflow:hidden}
+.gn-cta::after{content:"";position:absolute;left:-80px;top:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,72,.24),transparent 66%)}
+.gn-cta h2{color:#fff;font-size:clamp(21px,2.6vw,28px);position:relative;z-index:1}
+.gn-cta p{font-size:14px;color:#bfdccf;margin-top:10px;position:relative;z-index:1}
+.gn-cta-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;justify-content:flex-end}
+.gn-contact-info{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;color:var(--gn-muted)}
+.gn-contact-info b{color:var(--gn-ink);display:block;font-size:14px}
+
+/* ============ 页脚 ============ */
+.gn-footer{background:#0c2a29;color:#a8c5b8;padding:52px 0 24px;font-size:13.5px}
+.gn-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.gn-footer h4{color:#e9f5ef;font-size:14.5px;margin-bottom:14px;letter-spacing:.5px}
+.gn-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.gn-footer a:hover{color:var(--gn-amber)}
+.gn-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.gn-footer-brand .gn-brand-mark{background:var(--gn-amber)}
+.gn-footer-brand b{color:#fff;font-size:16px}
+.gn-footer p{line-height:1.8;color:#8fae9f}
+.gn-footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#7d9c8f}
+
+/* ============ 弹窗 / Toast / 回顶部 ============ */
+.gn-modal{position:fixed;inset:0;background:rgba(12,42,41,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:120;backdrop-filter:blur(3px)}
+.gn-modal.show{display:flex}
+.gn-modal-box{background:#fff;border-radius:18px;padding:26px;width:min(440px,100%);box-shadow:0 24px 60px rgba(0,0,0,.3);animation:gnPop .25s ease}
+@keyframes gnPop{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.gn-modal-box h3{font-size:19px;margin-bottom:8px}
+.gn-modal-box p{font-size:13.5px;color:var(--gn-muted);line-height:1.75;margin-bottom:14px}
+.gn-modal-box input,.gn-modal-box textarea{width:100%;border:1px solid var(--gn-line);border-radius:10px;padding:10px 12px;font-size:13.5px;font-family:inherit;margin-bottom:10px;outline:none;resize:vertical}
+.gn-modal-box input:focus,.gn-modal-box textarea:focus{border-color:var(--gn-mint);box-shadow:0 0 0 3px rgba(47,156,134,.14)}
+.gn-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.gn-modal-close{background:none;border:1px solid var(--gn-line);border-radius:10px;padding:8px 16px;font-size:13.5px;color:var(--gn-muted)}
+.gn-modal-close:hover{background:#f2f5f3}
+.gn-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.gn-share-row button{border:1px solid var(--gn-line);background:#fff;border-radius:10px;padding:8px 14px;font-size:13px;color:var(--gn-ink-2)}
+.gn-share-row button:hover{border-color:var(--gn-mint);color:var(--gn-teal)}
+.gn-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:var(--gn-ink);
+  color:#eaf4ee;font-size:13.5px;padding:11px 22px;border-radius:24px;opacity:0;pointer-events:none;
+  transition:.3s;z-index:200;box-shadow:0 12px 30px rgba(0,0,0,.28);
+}
+.gn-toast.show{opacity:1;transform:translate(-50%,0)}
+.gn-top{
+  position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;border:none;
+  background:var(--gn-teal);color:#fff;font-size:17px;box-shadow:0 10px 24px rgba(15,47,46,.3);
+  opacity:0;pointer-events:none;transition:.3s;z-index:90;
+}
+.gn-top.show{opacity:1;pointer-events:auto}
+.gn-top:hover{background:var(--gn-amber);color:#3a2400}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .gn-hero .gn-wrap{grid-template-columns:1fr;gap:34px}
+  .gn-video-grid{grid-template-columns:repeat(2,1fr)}
+  .gn-creators{grid-template-columns:repeat(2,1fr)}
+  .gn-focus{grid-template-columns:1fr}
+  .gn-special{grid-template-columns:repeat(2,1fr)}
+  .gn-reviews{grid-template-columns:repeat(2,1fr)}
+  .gn-rank{grid-template-columns:1fr}
+  .gn-stories{grid-template-columns:1fr 1fr}
+  .gn-inspire{grid-template-columns:1fr}
+  .gn-about{grid-template-columns:1fr}
+  .gn-footer-grid{grid-template-columns:1fr 1fr}
+  .gn-cta{grid-template-columns:1fr}
+  .gn-cta-actions{justify-content:flex-start}
+}
+@media (max-width:820px){
+  .gn-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+    border-bottom:1px solid var(--gn-line);padding:10px 18px 16px;flex-direction:column;gap:2px;
+    box-shadow:0 14px 24px rgba(15,47,46,.12);margin-left:0;
+  }
+  .gn-nav.open{display:flex}
+  .gn-header .gn-wrap{position:relative;flex-wrap:wrap;min-height:62px}
+  .gn-burger{display:block;order:3}
+  .gn-head-tools{order:4;width:100%;padding-bottom:12px}
+  .gn-search{flex:1}
+  .gn-search input{width:100%}
+  .gn-search input:focus{width:100%}
+  .gn-hero .gn-wrap{padding-top:40px;padding-bottom:48px}
+  .gn-section{padding:46px 0;scroll-margin-top:150px}
+  .gn-wall{grid-template-columns:repeat(4,1fr);grid-auto-rows:100px}
+  .gn-w-a{grid-column:span 4;grid-row:span 2}
+  .gn-w-b{grid-column:span 2}
+  .gn-w-c{grid-column:span 2}
+  .gn-w-e{grid-column:span 2}
+  .gn-w-f{grid-column:span 2}
+  .gn-notice-list{display:none}
+}
+@media (max-width:620px){
+  .gn-video-grid,.gn-video-grid.gn-two,.gn-special,.gn-reviews,.gn-stories,.gn-creators{grid-template-columns:1fr}
+  .gn-title-sec{font-size:22px}
+  .gn-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:96px}
+  .gn-w-a{grid-column:span 2;grid-row:span 2}
+  .gn-w-b,.gn-w-c,.gn-w-d,.gn-w-e,.gn-w-f{grid-column:span 1;grid-row:span 1}
+  .gn-hero-stats{gap:10px}
+  .gn-stat{flex:1 1 auto;min-width:100px}
+  .gn-cta{padding:26px}
+  .gn-footer-grid{grid-template-columns:1fr}
+  .gn-top{right:14px;bottom:16px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="gn-sticky">
+  <div class="gn-notice" id="gnNotice">
+    <div class="gn-wrap">
+      <span class="gn-notice-tag">最新更新</span>
+      <div class="gn-notice-list">
+        <span><b>11-19</b> 新增「台北夜市凌晨三点」系列 4 支原创短片，创作者联合企划已上线</span>
+        <span><b>11-17</b> 冬季城市影像征集开启报名，主题「巷口的温度」</span>
+        <span><b>11-14</b> 创作者线下分享会·大稻埕场次开放报名，名额 60 席</span>
+      </div>
+      <button class="gn-notice-close" id="gnNoticeClose" type="button" aria-label="收起公告">收起</button>
+    </div>
+  </div>
+  <header class="gn-header">
+    <div class="gn-wrap">
+      <a class="gn-brand" href="#gnTop" aria-label="今日吃瓜taipei nana 官方网站首页">
+        <span class="gn-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" fill="#ffb648"/><path d="M10 8.6l5.6 3.4L10 15.4z" fill="#0f3b3a"/></svg>
+        </span>
+        <span class="gn-brand-text">
+          <b>今日吃瓜taipei nana</b>
+          <small>Taipei Nana Studio</small>
+        </span>
+      </a>
+      <nav class="gn-nav" id="gnNav" aria-label="主导航">
+        <a href="#gnTop">首页</a>
+        <a href="#gnFocus">焦点影像</a>
+        <a href="#gnSpecial">专题企划</a>
+        <a href="#gnCreators">创作者</a>
+        <a href="#gnWall">影像墙</a>
+        <a href="#gnNews">企业动态</a>
+        <a href="#gnFaq">帮助</a>
+        <a href="#gnContact">联系</a>
+      </nav>
+      <div class="gn-head-tools">
+        <div class="gn-search">
+          <input type="text" id="gnSearchInput" placeholder="搜索影像 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="gnSearchBtn" aria-label="搜索">⌕</button>
+          <div class="gn-search-tip" id="gnSearchTip"></div>
+        </div>
+        <button class="gn-btn" type="button" id="gnSubmitBtn">投稿入口</button>
+        <button class="gn-burger" type="button" id="gnBurger" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="gnTop">
+
+  <!-- 首屏 -->
+  <section class="gn-hero" aria-labelledby="gnHeroTitle">
+    <div class="gn-wrap">
+      <div class="gn-hero-copy">
+        <span class="gn-hero-brandline"><i></i> 官方网站 · 城市生活影像社区</span>
+        <h1 id="gnHeroTitle">今日吃瓜taipei nana</h1>
+        <p class="gn-hero-lead">把台北的日常切成一段段可以反复回看的影像，记录巷口早餐摊的热气、雨后的骑楼，也记录每一个愿意举起镜头的人。</p>
+        <p class="gn-hero-desc">作为深耕城市生活影像的原创视频品牌，今日吃瓜taipei nana 以「真实、温暖、有细节」为内容标准，为创作者与企业搭建高品质内容生态，持续运营属于自己的社区与影像档案。</p>
+        <div class="gn-hero-actions">
+          <a class="gn-btn" href="#gnFocus">浏览焦点影像</a>
+          <a class="gn-btn gn-btn-ghost" href="#gnCreators" style="color:#eaf4ee;border-color:#8fbfae">认识创作者</a>
+          <button class="gn-btn gn-btn-ghost" type="button" id="gnShareTop" style="color:#eaf4ee;border-color:#8fbfae">分享本站</button>
+        </div>
+        <div class="gn-hero-stats">
+          <div class="gn-stat"><b data-gn-count="1860">0</b><span>原创影像作品</span></div>
+          <div class="gn-stat"><b data-gn-count="126">0</b><span>签约创作者</span></div>
+          <div class="gn-stat"><b data-gn-count="43">0</b><span>城市专题企划</span></div>
+        </div>
+      </div>
+      <div class="gn-hero-visual">
+        <div class="gn-hero-frame">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%232a6f77'/%3E%3Cstop offset='1' stop-color='%23f4bd7c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23sky)'/%3E%3Ccircle cx='610' cy='150' r='64' fill='%23ffe0a8' opacity='.9'/%3E%3Cpath d='M0 430h800v170H0z' fill='%230f3b3a' opacity='.92'/%3E%3Cg fill='%231a4d4b'%3E%3Crect x='60' y='250' width='120' height='200'/%3E%3Crect x='200' y='200' width='90' height='250'/%3E%3Crect x='310' y='280' width='140' height='170'/%3E%3Crect x='470' y='220' width='100' height='230'/%3E%3Crect x='590' y='300' width='150' height='150'/%3E%3C/g%3E%3Cg fill='%23ffcf8a' opacity='.85'%3E%3Crect x='78' y='276' width='18' height='24'/%3E%3Crect x='112' y='276' width='18' height='24'/%3E%3Crect x='78' y='320' width='18' height='24'/%3E%3Crect x='218' y='226' width='16' height='22'/%3E%3Crect x='248' y='226' width='16' height='22'/%3E%3Crect x='336' y='306' width='20' height='24'/%3E%3Crect x='376' y='306' width='20' height='24'/%3E%3Crect x='490' y='248' width='18' height='22'/%3E%3Crect x='610' y='326' width='20' height='24'/%3E%3C/g%3E%3Cpath d='M0 470c120-30 220 22 340 4s250-46 460-8v134H0z' fill='%23ffb648' opacity='.24'/%3E%3Ccircle cx='400' cy='300' r='46' fill='%23ffffff' opacity='.16'/%3E%3Cpath d='M386 278l38 22-38 22z' fill='%23ffffff' opacity='.85'/%3E%3C/svg%3E" alt="今日吃瓜taipei nana 首屏主视觉：黄昏时分的台北街景与影像播放标识" width="800" height="600">
+        </div>
+        <div class="gn-hero-badge">
+          <span class="gn-dot" aria-hidden="true"></span>
+          <span>本周新片 <b>24</b> 支 · 持续更新中</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌解析 -->
+  <section class="gn-section" id="gnAbout">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Brand Insight</span>
+          <h2 class="gn-h2">今日吃瓜taipei nana 是什么样的一处影像现场</h2>
+          <p class="gn-sub">从一次街头偶遇到一套完整的内容生态，我们把关键词拆开来看：今日、吃瓜、Taipei、Nana，四个词共同构成了这个品牌的气质与边界。</p>
+        </div>
+      </div>
+
+      <div class="gn-about">
+        <div class="gn-longtext">
+          <p>「今日」意味着时效与在场。今日吃瓜taipei nana 的镜头每天都会出现在台北的不同角落：清晨五点半的豆浆店、上午九点的捷运月台、下午的骑楼阴影、深夜仍亮着灯的便利店。我们相信城市是有呼吸节奏的，而这些节奏只有在「今天」被记录时才有温度。因此站内的内容更新以天为单位，编辑团队与创作者协同工作，让观众打开页面时看到的永远是这两天正在发生的事，而不是被反复咀嚼的旧素材。</p>
+          <p>「吃瓜」在这里不是猎奇，而是一种轻巧的观察姿态。我们不追逐耸动的标题，而是把注意力放在那些被忽略的生活褶皱上：摊主多送的一勺糖水、邻居在阳台晒出的棉被、雨停后水洼里倒映的招牌。这些片段单独看也许微小，但被整理成系列之后，就构成了属于这座城市的日常档案。作为官方网站，我们坚持原创与正版，所有影像均获得创作者授权，并以高清规格归档，方便长期检索与二次观看。</p>
+          <div class="gn-quotebar">我们希望观众点开任何一支影片，都能在三十秒内感受到「这是我熟悉的地方」——这种熟悉感，是今日吃瓜taipei nana 最核心的内容标准。</div>
+          <h3>Taipei：一座适合被慢慢拍的城市</h3>
+          <p>台北的魅力在于密度。短短一条街可能同时存在三代人的生计：老式五金行、新开的咖啡摊、骑楼下修表的老师傅。这样的密度对创作者极为友好，因为题材从不枯竭；但也提出了更高的要求——镜头必须有选择，叙事必须有取舍。平台为此建立了选题评审机制，鼓励创作者在拍摄前提交一页纸的企划，说明为什么这个题材值得被记录、它和城市的关系是什么。通过评审的项目会获得设备支持与后期协作，让好想法真正落地成片。</p>
+          <p>我们也把这份对城市的理解延伸到线下。每季度一次的创作者见面会选择在不同行政区举办，从万华的老街到内湖的河堤，参与者带着自己的设备与故事前来，交换的不是名片，而是正在拍摄中的片段。这样的交流让社区的黏性远超一般的内容平台，也让「今日吃瓜taipei nana」这个名字在本地创作者之间口耳相传，成为值得信赖的合作对象。</p>
+          <h3>Nana：一个具体的、可亲近的品牌人格</h3>
+          <p>Nana 是品牌的拟人化表达，也是内容审美的代名词。她不是高高在上的解说者，而是那个总在街角等你、随手就能掏出一台小相机的人。我们以 Nana 的视角制定了内容分级：轻记录、深访谈、专题企划、实验影像四条线，分别对应不同的制作周期与观看场景。轻记录强调即时与真实，深访谈强调深度与陪伴，专题企划强调结构与影响力，实验影像则为创作者提供冒险的空间。</p>
+          <p>在商业合作上，我们同样坚持这套逻辑。品牌方可以选择与某条内容线深度共创，而不是简单地植入 logo。过去一年里，我们与在地餐饮、独立书店、文创品牌共同完成了多个系列，既保证了内容的可看性，也让合作方获得了真实的用户反馈。这种以内容品质为先的合作方式，使平台在行业观察者眼中逐渐形成了「垂直领域、口碑稳定」的印象。</p>
+          <p>面向未来，今日吃瓜taipei nana 会继续把重心放在三件事上：一是扩充城市影像的长期档案，让十年后的人仍能检索到今天；二是完善创作者成长路径，从投稿、孵化到签约，每一步都有明确的指引；三是保持社区的真实与包容，让不同年龄、不同背景的居民都能在这里找到表达的位置。我们相信，一个品牌的 longevity 不来自流量峰值，而来自它是否真的陪伴了某些人的日常。</p>
+        </div>
+        <aside class="gn-about-card">
+          <h3>品牌关键词解析</h3>
+          <ul class="gn-about-list">
+            <li><b>今日：</b>以天为单位的更新节奏，强调在场感与时效性。</li>
+            <li><b>吃瓜：</b>轻巧的观察姿态，关注生活褶皱而非猎奇标题。</li>
+            <li><b>Taipei：</b>城市密度带来的题材富矿，也是内容的地理坐标。</li>
+            <li><b>Nana：</b>可亲近的品牌人格，统一四条内容线的审美标准。</li>
+          </ul>
+          <h3 style="margin-top:20px">内容线一览</h3>
+          <ul class="gn-about-list">
+            <li>轻记录 · 即时上传，单支 1–5 分钟</li>
+            <li>深访谈 · 双机位，20 分钟以上</li>
+            <li>专题企划 · 系列化，季度推出</li>
+            <li>实验影像 · 开放格式，鼓励冒险</li>
+          </ul>
+          <p style="margin-top:16px;font-size:12.8px;color:var(--gn-muted)">所有影像均经创作者授权，以高清规格归档；企业合作请通过页面底部联系方式洽谈。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点影像 -->
+  <section class="gn-section gn-section-alt" id="gnFocus">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Focus</span>
+          <h2 class="gn-h2">焦点影像：这两天值得留意的六支片</h2>
+          <p class="gn-sub">由编辑团队与创作者共同挑选，覆盖日常记录、城市探索与人物访谈。卡片上的数字会随你的操作实时变化。</p>
+        </div>
+        <a class="gn-btn gn-btn-ghost" href="#gnWall">查看全部影像</a>
+      </div>
+
+      <div class="gn-focus">
+        <article class="gn-card gn-focus-main">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23122f3f'/%3E%3Ccircle cx='150' cy='110' r='90' fill='%23ffb648' opacity='.25'/%3E%3Cg stroke='%23f4c98a' stroke-width='6' opacity='.9'%3E%3Cpath d='M0 380l170-120 130 80 160-140 180 120 160-90' fill='none'/%3E%3C/g%3E%3Cg fill='%23ffe6b8'%3E%3Ccircle cx='170' cy='260' r='6'/%3E%3Ccircle cx='300' cy='340' r='6'/%3E%3Ccircle cx='460' cy='200' r='6'/%3E%3Ccircle cx='640' cy='230' r='6'/%3E%3C/g%3E%3Crect x='0' y='420' width='800' height='80' fill='%230b2230'/%3E%3Cpath d='M380 250l40 22-40 22z' fill='%23ffffff' opacity='.8'/%3E%3C/svg%3E" alt="焦点影像《凌晨三点的夜市收摊时刻》封面，夜市灯光与收摊推车" width="800" height="500">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">焦点 · 城市探索</span>
+            <span class="gn-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#0f3b3a"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="gn-dur">18:42</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">凌晨三点的夜市收摊时刻：跟着摊主走完最后一圈</h3>
+            <p class="gn-card-desc">从士林到宁夏，镜头跟拍三位摊主收摊的全过程——洗碗、清点、把推车推回巷子。没有解说，只有锅铲与铁门的声响。</p>
+            <div class="gn-tags"><span class="gn-tag">夜市</span><span class="gn-tag">深夜</span><span class="gn-tag">在地文化</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-a">N</span> Nana 编辑组 · 11-19 发布</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">1284</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="gn-focus-side">
+          <a class="gn-mini" href="#gnWall">
+            <div class="gn-mini-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23e6efe7'/%3E%3Ccircle cx='250' cy='50' r='34' fill='%23ffcf8a'/%3E%3Cg fill='%232f9c86'%3E%3Crect x='30' y='110' width='50' height='90'/%3E%3Crect x='95' y='80' width='40' height='120'/%3E%3Crect x='150' y='125' width='60' height='75'/%3E%3C/g%3E%3Cpath d='M0 168c60-22 120 12 190-6s100-14 130 2v36H0z' fill='%230f3b3a' opacity='.2'/%3E%3C/svg%3E" alt="影像《骑楼下的早餐摊：一碗咸豆浆的四十年》封面" width="320" height="200">
+            </div>
+            <div class="gn-mini-body">
+              <b>骑楼下的早餐摊：一碗咸豆浆的四十年</b>
+              <span>人物访谈 · 12:06 · 林小满</span>
+            </div>
+          </a>
+          <a class="gn-mini" href="#gnWall">
+            <div class="gn-mini-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23283b52'/%3E%3Cg stroke='%237fb7d8' stroke-width='3' fill='none' opacity='.8'%3E%3Cpath d='M0 150q40-30 80 0t80 0 80 0 80 0'/%3E%3Cpath d='M0 170q40-24 80 0t80 0 80 0 80 0'/%3E%3C/g%3E%3Ccircle cx='70' cy='60' r='26' fill='%23ffd9a0' opacity='.7'/%3E%3Cg fill='%23ffffff' opacity='.5'%3E%3Ccircle cx='240' cy='40' r='3'/%3E%3Ccircle cx='270' cy='70' r='2'/%3E%3C/g%3E%3C/svg%3E" alt="影像《雨天限定：在骑楼下躲雨的四十分钟》封面" width="320" height="200">
+            </div>
+            <div class="gn-mini-body">
+              <b>雨天限定：在骑楼下躲雨的四十分钟</b>
+              <span>治愈影像 · 07:33 · 阿树</span>
+            </div>
+          </a>
+          <a class="gn-mini" href="#gnWall">
+            <div class="gn-mini-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23f6e7d4'/%3E%3Cg fill='%23c9743c'%3E%3Ccircle cx='80' cy='80' r='30'/%3E%3Ccircle cx='140' cy='105' r='22'/%3E%3Ccircle cx='215' cy='72' r='26'/%3E%3C/g%3E%3Cpath d='M0 160h320v40H0z' fill='%23a9562c' opacity='.35'/%3E%3Cpath d='M20 160q40-40 80 0' stroke='%238a4423' stroke-width='4' fill='none' opacity='.5'/%3E%3C/svg%3E" alt="影像《一碗卤肉饭的成本清单》封面，卤肉饭与账本" width="320" height="200">
+            </div>
+            <div class="gn-mini-body">
+              <b>一碗卤肉饭的成本清单：小店的账本与选择</b>
+              <span>行业观察 · 15:18 · 陈默</span>
+            </div>
+          </a>
+          <a class="gn-mini" href="#gnWall">
+            <div class="gn-mini-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23224a3f'/%3E%3Cg fill='%2381c9a5' opacity='.85'%3E%3Cpath d='M40 170V90l40-26 40 26v80z'/%3E%3Cpath d='M150 170V70l55-32 55 32v100z'/%3E%3C/g%3E%3Cg fill='%23ffd9a0'%3E%3Crect x='62' y='118' width='14' height='16'/%3E%3Crect x='190' y='100' width='16' height='18'/%3E%3C/g%3E%3Ccircle cx='260' cy='46' r='20' fill='%23ffb648' opacity='.7'/%3E%3C/svg%3E" alt="影像《老屋改造记：三个年轻人与一栋六十年的房子》封面" width="320" height="200">
+            </div>
+            <div class="gn-mini-body">
+              <b>老屋改造记：三个年轻人与一栋六十年的房子</b>
+              <span>品牌故事 · 22:41 · 周予安</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门视频流 -->
+  <section class="gn-section" id="gnVideos">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Trending</span>
+          <h2 class="gn-h2">热门影像流：正在被反复回看的日常</h2>
+          <p class="gn-sub">按近七日热度排序，涵盖教程、测评、访谈与生活记录。点击卡片上的按钮即可点赞、收藏或分享。</p>
+        </div>
+        <div class="gn-tags" id="gnFilterTags">
+          <button class="gn-act on" type="button" data-gn-filter="all">全部</button>
+          <button class="gn-act" type="button" data-gn-filter="生活">生活</button>
+          <button class="gn-act" type="button" data-gn-filter="访谈">访谈</button>
+          <button class="gn-act" type="button" data-gn-filter="测评">测评</button>
+          <button class="gn-act" type="button" data-gn-filter="教程">教程</button>
+        </div>
+      </div>
+
+      <div class="gn-video-grid" id="gnVideoGrid">
+        <article class="gn-card" data-gn-cat="生活">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f3dfc0'/%3E%3Cg fill='%23c25b4a'%3E%3Ccircle cx='110' cy='90' r='40'/%3E%3Ccircle cx='175' cy='120' r='26'/%3E%3C/g%3E%3Cg fill='%232f7d4f'%3E%3Cpath d='M300 60h120v130H300z' opacity='.25'/%3E%3C/g%3E%3Cpath d='M0 210h480v60H0z' fill='%23a9562c' opacity='.24'/%3E%3Cpath d='M220 130l30 16-30 16z' fill='%23ffffff' opacity='.85'/%3E%3C/svg%3E" alt="影像《早餐地图：从万华吃到松山的七个摊位》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">生活记录</span>
+            <span class="gn-dur">11:20</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">早餐地图：从万华吃到松山的七个摊位</h3>
+            <p class="gn-card-desc">一天骑车跑完七个早餐摊，记录每家的招牌与老板的一句话。</p>
+            <div class="gn-tags"><span class="gn-tag">美食烹饪</span><span class="gn-tag">城市探索</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-b">林</span> 林小满</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">932</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gn-card" data-gn-cat="访谈">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23203244'/%3E%3Ccircle cx='240' cy='120' r='58' fill='%23ffb648' opacity='.25'/%3E%3Crect x='90' y='150' width='300' height='90' rx='14' fill='%23162a38'/%3E%3Cg fill='%237fb7d8'%3E%3Crect x='120' y='176' width='60' height='8' rx='4'/%3E%3Crect x='120' y='196' width='120' height='8' rx='4'/%3E%3Crect x='270' y='176' width='80' height='8' rx='4'/%3E%3C/g%3E%3Cpath d='M226 112l34 18-34 18z' fill='%23ffffff' opacity='.85'/%3E%3C/svg%3E" alt="影像《独立书店老板的十年：把书店开成客厅》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">人物访谈</span>
+            <span class="gn-dur">26:05</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">独立书店老板的十年：把书店开成客厅</h3>
+            <p class="gn-card-desc">从选书到办活动，一家小书店如何成为社区里最亮的灯。</p>
+            <div class="gn-tags"><span class="gn-tag">文化访谈</span><span class="gn-tag">社区</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-c">陈</span> 陈默</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">768</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gn-card" data-gn-cat="教程">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e9efe6'/%3E%3Cg fill='%232f9c86' opacity='.85'%3E%3Crect x='60' y='60' width='150' height='100' rx='10'/%3E%3Crect x='230' y='90' width='190' height='70' rx='10'/%3E%3C/g%3E%3Cg stroke='%230f3b3a' stroke-width='4' fill='none'%3E%3Cpath d='M260 200h160'/%3E%3Cpath d='M60 210h140'/%3E%3C/g%3E%3Ccircle cx='360' cy='60' r='26' fill='%23ffb648'/%3E%3C/svg%3E" alt="影像《手机也能拍出电影感：五个运镜练习》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">教程干货</span>
+            <span class="gn-dur">14:37</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">手机也能拍出电影感：五个运镜练习</h3>
+            <p class="gn-card-desc">不依赖专业设备，用日常场景完成推、拉、摇、移的练习。</p>
+            <div class="gn-tags"><span class="gn-tag">实用技巧</span><span class="gn-tag">创作幕后</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-d">周</span> 周予安</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">1503</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gn-card" data-gn-cat="测评">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23dbe6f2'/%3E%3Cg fill='%235b7dbb'%3E%3Crect x='80' y='70' width='90' height='130' rx='8'/%3E%3Crect x='200' y='100' width='90' height='100' rx='8' opacity='.7'/%3E%3Crect x='320' y='60' width='90' height='140' rx='8' opacity='.5'/%3E%3C/g%3E%3Cg fill='%23ffb648'%3E%3Ccircle cx='125' cy='110' r='14'/%3E%3Ccircle cx='245' cy='136' r='12'/%3E%3C/g%3E%3Cpath d='M0 220h480v50H0z' fill='%23203244' opacity='.16'/%3E%3C/svg%3E" alt="影像《三款平价相机横评：谁更适合记录街头》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">深度测评</span>
+            <span class="gn-dur">19:52</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">三款平价相机横评：谁更适合记录街头</h3>
+            <p class="gn-card-desc">同一路线、同一时段，比较三款入门机的高感与对焦表现。</p>
+            <div class="gn-tags"><span class="gn-tag">科技前沿</span><span class="gn-tag">测评</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-e">阿</span> 阿树</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">641</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gn-card" data-gn-cat="生活">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f0e6f2'/%3E%3Cg fill='%23b25a8c' opacity='.8'%3E%3Ccircle cx='120' cy='100' r='44'/%3E%3Ccircle cx='230' cy='140' r='30'/%3E%3Ccircle cx='340' cy='90' r='38'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='.7'%3E%3Cpath d='M40 210q80-50 160 0t160 0 120-10' fill='none'/%3E%3C/g%3E%3Crect x='0' y='230' width='480' height='40' fill='%23603a58' opacity='.2'/%3E%3C/svg%3E" alt="影像《阳台种菜第三年：从三盆到一整面墙》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">生活方式</span>
+            <span class="gn-dur">09:14</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">阳台种菜第三年：从三盆到一整面墙</h3>
+            <p class="gn-card-desc">记录一平米阳台的四季变化，附上新手最容易踩的五个坑。</p>
+            <div class="gn-tags"><span class="gn-tag">日常记录</span><span class="gn-tag">治愈影像</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-f">许</span> 许知夏</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">1102</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gn-card" data-gn-cat="访谈">
+          <div class="gn-thumb">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23243a33'/%3E%3Cg fill='%2381c9a5' opacity='.8'%3E%3Cpath d='M70 220V110l50-30 50 30v110z'/%3E%3Cpath d='M200 220V90l60-34 60 34v130z'/%3E%3Cpath d='M350 220v-90l40-24 40 24v90z'/%3E%3C/g%3E%3Cg fill='%23ffd9a0'%3E%3Crect x='100' y='140' width='16' height='20'/%3E%3Crect x='240' y='120' width='18' height='22'/%3E%3Crect x='376' y='150' width='14' height='18'/%3E%3C/g%3E%3Ccircle cx='410' cy='60' r='22' fill='%23ffb648'/%3E%3C/svg%3E" alt="影像《在地三十年：一位里长的社区观察笔记》封面" width="480" height="270">
+            <span class="gn-thumb-mask" aria-hidden="true"></span>
+            <span class="gn-chip">人物访谈</span>
+            <span class="gn-dur">31:26</span>
+          </div>
+          <div class="gn-card-body">
+            <h3 class="gn-card-title">在地三十年：一位里长的社区观察笔记</h3>
+            <p class="gn-card-desc">从巷口路灯到社区菜园，听他讲这座城市如何一点点改变。</p>
+            <div class="gn-tags"><span class="gn-tag">文化访谈</span><span class="gn-tag">城市探索</span></div>
+            <div class="gn-card-foot">
+              <div class="gn-author"><span class="gn-avatar gn-av-a">N</span> Nana 编辑组</div>
+              <div class="gn-actions">
+                <button class="gn-act gn-like" type="button"><span>♡</span><span class="gn-act-num">509</span></button>
+                <button class="gn-act gn-save" type="button"><span>☆</span><span>收藏</span></button>
+                <button class="gn-act gn-share" type="button"><span>↗</span><span>分享</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="gn-section gn-section-alt" id="gnSpecial">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Series</span>
+          <h2 class="gn-h2">专题企划：把零散的日常串成一条线</h2>
+          <p class="gn-sub">每季度推出 3–5 个系列，由编辑团队发起、创作者共制，聚焦城市中值得被长期记录的主题。</p>
+        </div>
+      </div>
+      <div class="gn-special">
+        <article class="gn-special-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%232a6f77'/%3E%3Cg fill='%23ffcf8a' opacity='.9'%3E%3Ccircle cx='130' cy='100' r='30'/%3E%3Ccircle cx='200' cy='130' r='20'/%3E%3Ccircle cx='330' cy='90' r='26'/%3E%3C/g%3E%3Cpath d='M0 230q120-40 240 0t240 0v90H0z' fill='%230f3b3a' opacity='.75'/%3E%3Cpath d='M40 260h400' stroke='%23ffb648' stroke-width='3' opacity='.5'/%3E%3C/svg%3E" alt="专题《巷口的温度》封面，暖色巷弄与灯光" width="480" height="320">
+          <div class="gn-special-body">
+            <b>巷口的温度</b>
+            <p>冬季限定征集，记录一条巷子里的人情往来，已收到 86 份投稿。</p>
+            <span class="gn-state">征集中 · 报名中</span>
+          </div>
+        </article>
+        <article class="gn-special-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%23203244'/%3E%3Cg fill='%237fb7d8' opacity='.7'%3E%3Crect x='60' y='90' width='120' height='150' rx='10'/%3E%3Crect x='200' y='130' width='100' height='110' rx='10'/%3E%3Crect x='320' y='80' width='100' height='160' rx='10'/%3E%3C/g%3E%3Cg stroke='%23ffb648' stroke-width='4' fill='none'%3E%3Cpath d='M40 270h400'/%3E%3C/g%3E%3C/svg%3E" alt="专题《深夜营业中》封面，夜间店铺轮廓" width="480" height="320">
+          <div class="gn-special-body">
+            <b>深夜营业中</b>
+            <p>探访十家凌晨仍亮灯的小店，讲述它们与城市作息的默契。</p>
+            <span class="gn-state">更新至第 6 集</span>
+          </div>
+        </article>
+        <article class="gn-special-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%23f3dfc0'/%3E%3Cg fill='%23c25b4a'%3E%3Ccircle cx='110' cy='110' r='46'/%3E%3Ccircle cx='200' cy='150' r='32'/%3E%3C/g%3E%3Cg fill='%232f7d4f' opacity='.6'%3E%3Crect x='290' y='90' width='130' height='140' rx='10'/%3E%3C/g%3E%3Cpath d='M0 250h480v70H0z' fill='%23a9562c' opacity='.2'/%3E%3C/svg%3E" alt="专题《一碗饭的经济学》封面，餐碗与账本" width="480" height="320">
+          <div class="gn-special-body">
+            <b>一碗饭的经济学</b>
+            <p>从食材成本到人力时薪，用小店账本理解一座城市的物价。</p>
+            <span class="gn-state">已完结 · 12 集</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="gn-section" id="gnCreators">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Creators</span>
+          <h2 class="gn-h2">创作者矩阵：把镜头交给生活在现场的人</h2>
+          <p class="gn-sub">他们中有摄影师、老师、咖啡师、退休工程师。不同的背景，让这座城市的影像有了更多层次。</p>
+        </div>
+      </div>
+      <div class="gn-creators">
+        <article class="gn-creator">
+          <div class="gn-creator-av gn-av-a" aria-hidden="true">林</div>
+          <b>林小满</b>
+          <div class="gn-field">美食 · 城市探索</div>
+          <p>骑车跑遍台北早餐摊，擅长用一条路线串起多个故事。</p>
+          <div class="gn-creator-data"><span>作品<b>86</b></span><span>关注者<b>24.1k</b></span></div>
+          <button class="gn-act gn-author-more" type="button">查看档案</button>
+        </article>
+        <article class="gn-creator">
+          <div class="gn-creator-av gn-av-c" aria-hidden="true">陈</div>
+          <b>陈默</b>
+          <div class="gn-field">文化访谈 · 商业观察</div>
+          <p>前财经记者，现在拍小店与书店，喜欢听别人算账。</p>
+          <div class="gn-creator-data"><span>作品<b>54</b></span><span>关注者<b>18.6k</b></span></div>
+          <button class="gn-act gn-author-more" type="button">查看档案</button>
+        </article>
+        <article class="gn-creator">
+          <div class="gn-creator-av gn-av-d" aria-hidden="true">周</div>
+          <b>周予安</b>
+          <div class="gn-field">教程干货 · 创作幕后</div>
+          <p>摄影讲师，坚持用手机完成大部分练习作业的示范。</p>
+          <div class="gn-creator-data"><span>作品<b>112</b></span><span>关注者<b>31.4k</b></span></div>
+          <button class="gn-act gn-author-more" type="button">查看档案</button>
+        </article>
+        <article class="gn-creator">
+          <div class="gn-creator-av gn-av-f" aria-hidden="true">许</div>
+          <b>许知夏</b>
+          <div class="gn-field">生活方式 · 治愈影像</div>
+          <p>阳台种菜与手作爱好者，作品节奏慢，评论区却很热闹。</p>
+          <div class="gn-creator-data"><span>作品<b>73</b></span><span>关注者<b>22.8k</b></span></div>
+          <button class="gn-act gn-author-more" type="button">查看档案</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影像墙 -->
+  <section class="gn-section gn-section-alt" id="gnWall">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Gallery</span>
+          <h2 class="gn-h2">影像墙：这一周被拍下来的城市切面</h2>
+          <p class="gn-sub">来自社区创作者的静态影像，与视频内容互相补充。每一张都附有拍摄地点与一句话说明。</p>
+        </div>
+        <button class="gn-btn gn-btn-ghost" type="button" id="gnWallMore">上传我的作品</button>
+      </div>
+      <div class="gn-wall">
+        <figure class="gn-w-a">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 420'%3E%3Crect width='600' height='420' fill='%232a6f77'/%3E%3Ccircle cx='470' cy='90' r='52' fill='%23ffe0a8'/%3E%3Cpath d='M0 300q150-60 300 0t300 0v120H0z' fill='%230f3b3a' opacity='.8'/%3E%3Cg fill='%231a4d4b'%3E%3Crect x='60' y='180' width='80' height='120'/%3E%3Crect x='170' y='150' width='60' height='150'/%3E%3Crect x='400' y='200' width='90' height='100'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《河堤上的黄昏》大图，河岸与远处城市轮廓">
+          <figcaption>河堤上的黄昏 · 摄于淡水河畔</figcaption>
+        </figure>
+        <figure class="gn-w-b">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23f3dfc0'/%3E%3Cg fill='%23c9743c'%3E%3Ccircle cx='90' cy='80' r='30'/%3E%3Ccircle cx='160' cy='110' r='22'/%3E%3C/g%3E%3Cpath d='M0 180h400v60H0z' fill='%23a9562c' opacity='.28'/%3E%3C/svg%3E" alt="影像墙作品《早餐摊的第一锅豆浆》中图，热气与铁锅">
+          <figcaption>早餐摊的第一锅豆浆</figcaption>
+        </figure>
+        <figure class="gn-w-c">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 260'%3E%3Crect width='400' height='260' fill='%23dbe6f2'/%3E%3Cg stroke='%237fb7d8' stroke-width='4' fill='none' opacity='.8'%3E%3Cpath d='M0 190q50-40 100 0t100 0 100 0 100 0'/%3E%3C/g%3E%3Ccircle cx='320' cy='70' r='26' fill='%23ffd9a0'/%3E%3C/svg%3E" alt="影像墙作品《雨后的骑楼倒影》中图，积水反射">
+          <figcaption>雨后的骑楼倒影</figcaption>
+        </figure>
+        <figure class="gn-w-d">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 260'%3E%3Crect width='260' height='260' fill='%23243a33'/%3E%3Ccircle cx='130' cy='110' r='48' fill='%2381c9a5' opacity='.8'/%3E%3Cpath d='M0 200h260v60H0z' fill='%230f2f2e'/%3E%3C/svg%3E" alt="影像墙作品《阳台的第三盆罗勒》小图，绿植特写">
+          <figcaption>阳台的第三盆罗勒</figcaption>
+        </figure>
+        <figure class="gn-w-e">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23203244'/%3E%3Cg fill='%23ffb648' opacity='.85'%3E%3Crect x='40' y='90' width='60' height='90'/%3E%3Crect x='130' y='60' width='50' height='120'/%3E%3Crect x='250' y='100' width='90' height='80'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.35'%3E%3Ccircle cx='300' cy='50' r='3'/%3E%3Ccircle cx='340' cy='80' r='2'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品《凌晨的便利店招牌》中图，夜间灯光">
+          <figcaption>凌晨的便利店招牌</figcaption>
+        </figure>
+        <figure class="gn-w-f">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 240'%3E%3Crect width='400' height='240' fill='%23e9efe6'/%3E%3Cg fill='%232f9c86'%3E%3Crect x='60' y='70' width='70' height='100' rx='8'/%3E%3Crect x='160' y='100' width='70' height='70' rx='8' opacity='.7'/%3E%3C/g%3E%3Ccircle cx='310' cy='90' r='34' fill='%23ffb648'/%3E%3Cpath d='M0 200h400v40H0z' fill='%230f3b3a' opacity='.14'/%3E%3C/svg%3E" alt="影像墙作品《老街五金行的午后》中图，店面与货架">
+          <figcaption>老街五金行的午后</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 评价 + 榜单 -->
+  <section class="gn-section" id="gnReviews">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Community</span>
+          <h2 class="gn-h2">用户评价与数据榜单：社区的真实回声</h2>
+          <p class="gn-sub">这些评价来自长期观看与参与投稿的用户，我们也把近期的热度、新人与口碑数据一并公开。</p>
+        </div>
+      </div>
+
+      <div class="gn-reviews">
+        <article class="gn-review">
+          <p>在这里第一次看到有人认真拍我家楼下的面摊，那种被看见的感觉很难形容。后来我自己也投了一支，编辑给了很具体的修改建议。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-a">王</span><div><b>王小姐</b> · 台北文山<span class="gn-stars"> ★★★★★</span></div></div>
+        </article>
+        <article class="gn-review">
+          <p>更新很稳定，几乎每天都有新东西。最喜欢「深夜营业中」那个系列，配乐克制，不煽情，看完会想去楼下走走。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-c">李</span><div><b>李同学</b> · 新北板桥<span class="gn-stars"> ★★★★★</span></div></div>
+        </article>
+        <article class="gn-review">
+          <p>作为品牌方，我们合作过一次专题。对方对内容的要求比我们还严格，最后成片的效果远超预期，后续还会继续。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-e">甲</span><div><b>甲方代表 K</b> · 在地文创品牌<span class="gn-stars"> ★★★★★</span></div></div>
+        </article>
+        <article class="gn-review">
+          <p>教程线是真的有用，不是那种讲废话的。手机运镜那期我照着练了一周，明显感觉画面稳了，感谢。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-d">阿</span><div><b>阿凯</b> · 摄影爱好者<span class="gn-stars"> ★★★★★</span></div></div>
+        </article>
+        <article class="gn-review">
+          <p>有时候只是想找一段安静的影像下饭，这里刚好合适。不过希望能增加按区域筛选的功能，找自家附近的片子更方便。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-f">陈</span><div><b>陈太太</b> · 台北士林<span class="gn-stars"> ★★★★☆</span></div></div>
+        </article>
+        <article class="gn-review">
+          <p>投稿流程清楚，审核反馈也在三天内。作为新人，第一次被推荐到首页的时候真的很开心，会继续拍下去。</p>
+          <div class="gn-review-foot"><span class="gn-avatar gn-av-b">小</span><div><b>小周</b> · 学生创作者<span class="gn-stars"> ★★★★★</span></div></div>
+        </article>
+      </div>
+
+      <div class="gn-rank" style="margin-top:30px">
+        <div class="gn-rank-col">
+          <h3><i></i>本周热度榜</h3>
+          <ol class="gn-rank-list">
+            <li><span class="gn-rank-no">1</span><span>手机也能拍出电影感</span><em>热度 98</em></li>
+            <li><span class="gn-rank-no">2</span><span>凌晨三点的夜市收摊时刻</span><em>热度 94</em></li>
+            <li><span class="gn-rank-no">3</span><span>三款平价相机横评</span><em>热度 91</em></li>
+            <li><span class="gn-rank-no">4</span><span>阳台种菜第三年</span><em>热度 87</em></li>
+            <li><span class="gn-rank-no">5</span><span>巷口的温度 · 预告</span><em>热度 85</em></li>
+          </ol>
+        </div>
+        <div class="gn-rank-col">
+          <h3><i></i>新人榜</h3>
+          <ol class="gn-rank-list">
+            <li><span class="gn-rank-no">1</span><span>小周 · 学生创作者</span><em>首片 8.2k</em></li>
+            <li><span class="gn-rank-no">2</span><span>阿凯 · 摄影爱好者</span><em>首片 6.7k</em></li>
+            <li><span class="gn-rank-no">3</span><span>Momo · 咖啡师</span><em>首片 5.9k</em></li>
+            <li><span class="gn-rank-no">4</span><span>老吴 · 退休工程师</span><em>首片 4.4k</em></li>
+            <li><span class="gn-rank-no">5</span><span>豆豆 · 手作达人</span><em>首片 3.8k</em></li>
+          </ol>
+        </div>
+        <div class="gn-rank-col">
+          <h3><i></i>口碑榜</h3>
+          <ol class="gn-rank-list">
+            <li><span class="gn-rank-no">1</span><span>独立书店老板的十年</span><em>好评 99%</em></li>
+            <li><span class="gn-rank-no">2</span><span>在地三十年 · 里长访谈</span><em>好评 98%</em></li>
+            <li><span class="gn-rank-no">3</span><span>老屋改造记</span><em>好评 97%</em></li>
+            <li><span class="gn-rank-no">4</span><span>雨天限定 · 骑楼躲雨</span><em>好评 96%</em></li>
+            <li><span class="gn-rank-no">5</span><span>一碗卤肉饭的成本清单</span><em>好评 95%</em></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 随笔 + 灵感工具 -->
+  <section class="gn-section gn-section-alt" id="gnStories">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Journal</span>
+          <h2 class="gn-h2">随笔与创作灵感：影像之外的补充</h2>
+          <p class="gn-sub">编辑与创作者的文字记录，以及一个轻量的灵感工具，帮你把「想拍」变成「可以开拍」。</p>
+        </div>
+      </div>
+
+      <div class="gn-stories">
+        <article class="gn-story">
+          <span class="gn-story-meta">创作幕后 · 11-18</span>
+          <b>为什么我们决定不用旁白</b>
+          <p>拍夜市那一集时，我们剪了三个版本，最后一个版本把旁白全部删掉。摊主洗碗的水声、铁门落下的回响，本身已经足够说明一切。</p>
+          <a class="gn-story-more" href="#gnFocus">阅读全文 →</a>
+        </article>
+        <article class="gn-story">
+          <span class="gn-story-meta">行业观察 · 11-15</span>
+          <b>小店的账本，比报表更接近真实</b>
+          <p>和三家小店老板聊完之后，我们对「成本」有了新的理解。那些没被写进报表的支出，往往才是决定一家店能不能撑下去的关键。</p>
+          <a class="gn-story-more" href="#gnSpecial">阅读全文 →</a>
+        </article>
+        <article class="gn-story">
+          <span class="gn-story-meta">日常记录 · 11-12</span>
+          <b>一台旧相机陪我走过的三条街</b>
+          <p>机器老了，对焦慢，反而让我愿意在一个地方多站一会儿。这三条街我拍了两年，每次都有新的东西冒出来。</p>
+          <a class="gn-story-more" href="#gnWall">阅读全文 →</a>
+        </article>
+      </div>
+
+      <div class="gn-inspire" style="margin-top:32px">
+        <div class="gn-inspire-panel">
+          <h3>灵感生成器</h3>
+          <p>选择一个方向，我们会给出一条可以马上执行的拍摄线索。工具仅作启发，真正的画面还得靠你走到现场。</p>
+          <div class="gn-inspire-chips" id="gnInspireChips">
+            <button type="button" data-gn-i="0">城市探索</button>
+            <button type="button" data-gn-i="1">人物访谈</button>
+            <button type="button" data-gn-i="2">生活记录</button>
+            <button type="button" data-gn-i="3">实用技巧</button>
+          </div>
+          <div class="gn-inspire-out" id="gnInspireOut">点击上方标签，生成一条属于你的拍摄线索。</div>
+        </div>
+        <div class="gn-inspire-side">
+          <div class="gn-toolrow">
+            <span class="gn-tool-ico" aria-hidden="true">✎</span>
+            <div><b>标题建议器</b><span>输入你的主题，获得三个不同语气的标题方向：记录型、悬念型、人物型。</span></div>
+          </div>
+          <div class="gn-toolrow">
+            <span class="gn-tool-ico" aria-hidden="true">✂</span>
+            <div><b>剪辑节奏表</b><span>按 60 秒、3 分钟、10 分钟三种时长，给出镜头数与转场建议。</span></div>
+          </div>
+          <div class="gn-toolrow">
+            <span class="gn-tool-ico" aria-hidden="true">◎</span>
+            <div><b>选题评审</b><span>提交一页纸企划，编辑团队会在三个工作日内给出反馈与拍摄建议。</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + 合作 + FAQ -->
+  <section class="gn-section" id="gnNews">
+    <div class="gn-wrap">
+      <div class="gn-sec-head">
+        <div>
+          <span class="gn-kicker">Newsroom</span>
+          <h2 class="gn-h2">企业动态与官方发布</h2>
+          <p class="gn-sub">关于平台运营、活动报名与内容更新的公告。所有信息以本页为准，转载请注明出处。</p>
+        </div>
+      </div>
+      <div class="gn-timeline">
+        <div class="gn-tl-item">
+          <span class="gn-tl-date">2026-11-19</span>
+          <b>「巷口的温度」冬季征集正式开启报名</b>
+          <p>面向所有注册创作者，主题为冬季巷弄里的人情往来。投稿截止 12 月 15 日，入选作品将进入年度专题并参与线下展映。</p>
+        </div>
+        <div class="gn-tl-item">
+          <span class="gn-tl-date">2026-11-17</span>
+          <b>创作者线下分享会·大稻埕场次开放报名</b>
+          <p>本期主题为「如何用一支片讲清一个人」，限额 60 人，报名通过站内投稿入口提交即可，名额满即关闭。</p>
+        </div>
+        <div class="gn-tl-item">
+          <span class="gn-tl-date">2026-11-14</span>
+          <b>平台影像归档系统升级完成</b>
+          <p>所有已上线作品完成高清版本归档，检索速度提升，创作者可在个人页查看历史作品的授权状态与播放数据。</p>
+        </div>
+        <div class="gn-tl-item">
+          <span class="gn-tl-date">2026-11-08</span>
+          <b>与三家在地文创品牌达成年度内容合作</b>
+          <p>合作方向包括小店纪实、手作工艺与街区导览，相关专题将于十二月陆续上线，欢迎更多品牌通过页面底部联系方式洽谈。</p>
+        </div>
+      </div>
+
+      <div style="margin-top:38px">
+        <h3 style="font-size:17px;margin-bottom:14px">合作品牌与伙伴</h3>
+        <div class="gn-partners">
+          <span class="gn-partner">河岸书店</span>
+          <span class="gn-partner">山丘咖啡</span>
+          <span class="gn-partner">老街五金行</span>
+          <span class="gn-partner">日光手作</span>
+          <span class="gn-partner">城市漫步协会</span>
+          <span class="gn-partner">小满食堂</span>
+        </div>
+      </div>
+
+      <div class="gn-faq" id="gnFaq">
+        <h3 style="font-size:17px;margin:10px 0 0">常见问题</h3>
+        <details>
+          <summary>如何向今日吃瓜taipei nana 投稿？</summary>
+          <p>点击页面右上角「投稿入口」，填写作品链接、拍摄地点与一段 100 字以内的说明即可。初审通常在三个工作日内完成，通过后会收到编辑的修改建议或上线通知。</p>
+        </details>
+        <details>
+          <summary>作品必须与台北有关吗？</summary>
+          <p>平台以城市生活影像为核心，台北是主要的地理坐标，但也接受其他城市中具有相似气质的日常记录。关键在于是否有具体的现场感，而不是地名本身。</p>
+        </details>
+        <details>
+          <summary>投稿作品的版权归谁？</summary>
+          <p>版权始终归创作者所有。平台仅获得在官方网站及相关专题中的展示授权，并会在作品中标注创作者信息。如需商业合作，会另行签署协议并告知创作者。</p>
+        </details>
+        <details>
+          <summary>可以申请设备或后期支持吗？</summary>
+          <p>可以。通过选题评审的项目可申请设备借用与后期协作，具体额度视项目规模而定。请在投稿时说明你的拍摄计划与所需支持，编辑会一并评估。</p>
+        </details>
+        <details>
+          <summary>线下活动如何报名？</summary>
+          <p>每场活动会在企业动态中发布报名信息，通常通过站内投稿入口提交姓名与联系方式。名额有限，报名成功后会收到确认回复，请留意站内消息。</p>
+        </details>
+        <details>
+          <summary>品牌合作有哪些形式？</summary>
+          <p>包括专题共制、系列冠名、线下展映与内容授权四种形式。我们不接受纯贴片式植入，合作内容需与平台的内容标准一致，具体可联系商务邮箱洽谈。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 / 投稿 -->
+  <section class="gn-section" id="gnContact">
+    <div class="gn-wrap">
+      <div class="gn-cta">
+        <div>
+          <h2>把你的镜头对准今天</h2>
+          <p>无论你拍的是巷口的一碗面，还是某个即将消失的老手艺，只要它足够真实，就值得被记录。今日吃瓜taipei nana 官方网站持续开放投稿与品牌合作。</p>
+        </div>
+        <div class="gn-cta-actions">
+          <button class="gn-btn" type="button" id="gnSubmitBtn2">立即投稿</button>
+          <button class="gn-btn gn-btn-ghost" type="button" id="gnShareBtn2" style="color:#eaf4ee;border-color:#8fbfae">分享本站</button>
+        </div>
+      </div>
+      <div class="gn-contact-info">
+        <div><b>商务合作</b>business@nanastudio.example</div>
+        <div><b>投稿咨询</b>submit@nanastudio.example</div>
+        <div><b>线下活动</b>台北市大同区（预约制）</div>
+        <div><b>运营时间</b>周一至周五 10:00–19:00</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="gn-footer">
+  <div class="gn-wrap">
+    <div class="gn-footer-grid">
+      <div>
+        <div class="gn-footer-brand">
+          <span class="gn-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" fill="#0f3b3a"/><path d="M10 8.6l5.6 3.4L10 15.4z" fill="#ffb648"/></svg>
+          </span>
+          <b>今日吃瓜taipei nana</b>
+        </div>
+        <p>深耕城市生活影像的原创视频品牌与官方网站，以真实、温暖、有细节的内容标准，持续运营创作者社区与城市影像档案。</p>
+        <p style="margin-top:10px">本页内容均为原创或经授权发布，转载请注明出处。企业合作请通过商务邮箱联系。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#gnFocus">焦点影像</a></li>
+          <li><a href="#gnVideos">热门影像流</a></li>
+          <li><a href="#gnSpecial">专题企划</a></li>
+          <li><a href="#gnWall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#gnCreators">创作者矩阵</a></li>
+          <li><a href="#gnReviews">用户评价</a></li>
+          <li><a href="#gnStories">创作灵感</a></li>
+          <li><a href="#gnFaq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#gnAbout">品牌解析</a></li>
+          <li><a href="#gnNews">企业动态</a></li>
+          <li><a href="#gnContact">联系我们</a></li>
+          <li><a href="#gnTop">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gn-footer-bottom">
+      <span>© 2026 今日吃瓜taipei nana 官方网站 · 版权所有</span>
+      <span>持续运营中 · 内容生态与社区共建</span>
+      <span>备案号：京ICP备 00000000 号（示例）</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 通用弹窗 -->
+<div class="gn-modal" id="gnModal" role="dialog" aria-modal="true" aria-labelledby="gnModalTitle">
+  <div class="gn-modal-box">
+    <h3 id="gnModalTitle">提示</h3>
+    <div id="gnModalBody"></div>
+    <div class="gn-modal-actions">
+      <button class="gn-modal-close" type="button" id="gnModalClose">关闭</button>
+      <button class="gn-btn" type="button" id="gnModalOk">确定</button>
+    </div>
+  </div>
+</div>
+
+<div class="gn-toast" id="gnToast" role="status" aria-live="polite"></div>
+<button class="gn-top" id="gnTopBtn" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 工具 ---------- */
+  var toastEl = document.getElementById('gnToast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  var modal = document.getElementById('gnModal');
+  var modalTitle = document.getElementById('gnModalTitle');
+  var modalBody = document.getElementById('gnModalBody');
+  var modalOk = document.getElementById('gnModalOk');
+  var modalCallback = null;
+  function openModal(title, html, okText, callback){
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modalOk.textContent = okText || '确定';
+    modalCallback = callback || null;
+    modal.classList.add('show');
+  }
+  function closeModal(){
+    modal.classList.remove('show');
+    modalBody.innerHTML = '';
+    modalCallback = null;
+  }
+  document.getElementById('gnModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  modalOk.addEventListener('click', function(){
+    if(modalCallback){ modalCallback(); }
+    else closeModal();
+  });
+
+  /* ---------- 公告条收起 ---------- */
+  document.getElementById('gnNoticeClose').addEventListener('click', function(){
+    document.getElementById('gnNotice').style.display = 'none';
+    this.blur();
+  });
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('gnBurger');
+  var nav = document.getElementById('gnNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ---------- 搜索 ---------- */
+  var searchInput = document.getElementById('gnSearchInput');
+  var searchTip = document.getElementById('gnSearchTip');
+  var searchIndex = [
+    {t:'凌晨三点的夜市收摊时刻', s:'焦点影像 · 城市探索'},
+    {t:'早餐地图：从万华吃到松山的七个摊位', s:'热门影像 · 生活记录'},
+    {t:'独立书店老板的十年：把书店开成客厅', s:'人物访谈'},
+    {t:'手机也能拍出电影感：五个运镜练习', s:'教程干货'},
+    {t:'三款平价相机横评：谁更适合记录街头', s:'深度测评'},
+    {t:'巷口的温度 · 冬季征集', s:'专题企划'},
+    {t:'林小满', s:'创作者 · 美食与城市探索'},
+    {t:'周予安', s:'创作者 · 教程与创作幕后'},
+    {t:'企业动态与官方发布', s:'新闻'},
+    {t:'常见问题', s:'帮助中心'}
+  ];
+  function renderSearch(kw){
+    var list = searchIndex.filter(function(item){
+      return !kw || item.t.indexOf(kw) > -1 || item.s.indexOf(kw) > -1;
+    }).slice(0,6);
+    if(!list.length){
+      searchTip.innerHTML = '<em>没有找到与「'+kw+'」相关的内容，换个关键词试试。</em>';
+    }else{
+      searchTip.innerHTML = '<em>为你找到 '+list.length+' 条相关内容</em>' + list.map(function(item){
+        return '<a href="#gnVideos">'+item.t+'<span style="float:right;color:#9aada7;font-size:11px">'+item.s+'</span></a>';
+      }).join('');
+    }
+    searchTip.classList.add('show');
+  }
+  searchInput.addEventListener('input', function(){
+    var kw = this.value.trim();
+    if(kw){ renderSearch(kw); } else { searchTip.classList.remove('show'); }
+  });
+  searchInput.addEventListener('focus', function(){
+    if(this.value.trim()){ renderSearch(this.value.trim()); }
+  });
+  document.getElementById('gnSearchBtn').addEventListener('click', function(){
+    var kw = searchInput.value.trim();
+    if(!kw){ toast('请输入关键词后再搜索'); searchInput.focus(); return; }
+    renderSearch(kw);
+    toast('已按「'+kw+'」筛出相关结果');
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.gn-search')){ searchTip.classList.remove('show'); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('.gn-like');
+    if(likeBtn){
+      var numEl = likeBtn.querySelector('.gn-act-num');
+      var n = parseInt(numEl.textContent, 10) || 0;
+      if(likeBtn.classList.contains('on')){
+        likeBtn.classList.remove('on');
+        likeBtn.querySelector('span').textContent = '♡';
+        numEl.textContent = n - 1;
+      }else{
+        likeBtn.classList.add('on');
+        likeBtn.querySelector('span').textContent = '♥';
+        numEl.textContent = n + 1;
+        toast('已点赞，感谢你的喜欢');
+      }
+      return;
+    }
+    var saveBtn = e.target.closest('.gn-save');
+    if(saveBtn){
+      var on = saveBtn.classList.toggle('on-save');
+      saveBtn.querySelector('span').textContent = on ? '★' : '☆';
+      saveBtn.querySelectorAll('span')[1].textContent = on ? '已收藏' : '收藏';
+      toast(on ? '已加入收藏夹' : '已取消收藏');
+      return;
+    }
+    var shareBtn = e.target.closest('.gn-share');
+    if(shareBtn){
+      openShareModal();
+    }
+  });
+
+  /* ---------- 分享 ---------- */
+  function openShareModal(){
+    var html = '' +
+      '<p>把今日吃瓜taipei nana 分享给同样喜欢城市影像的朋友。</p>' +
+      '<div class="gn-share-row">' +
+        '<button type="button" data-gn-share="微信">微信</button>' +
+        '<button type="button" data-gn-share="微博">微博</button>' +
+        '<button type="button" data-gn-share="QQ">QQ</button>' +
+        '<button type="button" data-gn-share="复制链接">复制链接</button>' +
+      '</div>' +
+      '<p style="font-size:12.5px;color:#8a9d97">分享内容以官方页面信息为准，请勿修改标题与来源说明。</p>';
+    openModal('分享本站', html, '完成', function(){ closeModal(); });
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-gn-share]');
+    if(!b) return;
+    var type = b.getAttribute('data-gn-share');
+    if(type === '复制链接'){
+      var url = window.location.href;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){ toast('链接已复制到剪贴板'); }, function(){ toast('复制失败，请手动复制地址栏链接'); });
+      }else{
+        toast('复制失败，请手动复制地址栏链接');
+      }
+    }else{
+      toast('已生成「'+type+'」分享入口（演示）');
+    }
+  });
+  document.getElementById('gnShareTop').addEventListener('click', openShareModal);
+  document.getElementById('gnShareBtn2').addEventListener('click', openShareModal);
+
+  /* ---------- 投稿 ---------- */
+  function openSubmitModal(){
+    var html = '' +
+      '<p>请填写作品链接与简要说明，编辑会在三个工作日内回复。</p>' +
+      '<input type="text" id="gnSubLink" placeholder="作品链接（必填）">' +
+      '<input type="text" id="gnSubPlace" placeholder="拍摄地点，例如：台北·大稻埕">' +
+      '<textarea id="gnSubDesc" rows="3" placeholder="用 100 字介绍这支片想讲什么"></textarea>';
+    openModal('投稿入口', html, '提交', function(){
+      var link = document.getElementById('gnSubLink').value.trim();
+      if(!link){ toast('请先填写作品链接'); return; }
+      closeModal();
+      toast('投稿已提交，编辑会在三个工作日内联系你');
+    });
+  }
+  document.getElementById('gnSubmitBtn').addEventListener('click', openSubmitModal);
+  document.getElementById('gnSubmitBtn2').addEventListener('click', openSubmitModal);
+  document.getElementById('gnWallMore').addEventListener('click', openSubmitModal);
+
+  /* ---------- 作者信息弹窗 ---------- */
+  var authorInfo = {
+    '林小满':{f:'美食 · 城市探索',d:'骑车跑遍台北早餐摊，擅长用一条路线串起多个故事。作品 86 支，关注者 24.1k。'},
+    '陈默':{f:'文化访谈 · 商业观察',d:'前财经记者，现在拍小店与书店，喜欢听别人算账。作品 54 支，关注者 18.6k。'},
+    '周予安':{f:'教程干货 · 创作幕后',d:'摄影讲师，坚持用手机完成大部分练习作业的示范。作品 112 支，关注者 31.4k。'},
+    '许知夏':{f:'生活方式 · 治愈影像',d:'阳台种菜与手作爱好者，作品节奏慢，评论区却很热闹。作品 73 支，关注者 22.8k。'}
+  };
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.gn-author-more');
+    if(!btn) return;
+    var card = btn.closest('.gn-creator');
+    var name = card.querySelector('b').textContent.trim();
+    var info = authorInfo[name] || {f:'创作者',d:'暂无更多档案信息，可前往投稿入口了解合作方式。'};
+    openModal(name + ' 的创作者档案',
+      '<p><b>擅长领域：</b>'+info.f+'</p><p>'+info.d+'</p><p style="font-size:12.5px;color:#8a9d97">如需合作，请通过页面底部商务邮箱联系，并注明创作者姓名。</p>',
+      '知道了', function(){ closeModal(); });
+  });
+
+  /* ---------- 筛选 ---------- */
+  var filterTags = document.getElementById('gnFilterTags');
+  filterTags.addEventListener('click', function(e){
+    var b = e.target.closest('[data-gn-filter]');
+    if(!b) return;
+    filterTags.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    var f = b.getAttribute('data-gn-filter');
+    var cards = document.querySelectorAll('#gnVideoGrid .gn-card');
+    var shown = 0;
+    cards.forEach(function(c){
+      var ok = (f === 'all') || (c.getAttribute('data-gn-cat') === f);
+      c.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    toast(f === 'all' ? '已显示全部影像' : '已筛选出 '+shown+' 支相关影像');
+  });
+
+  /* ---------- 灵感生成器 ---------- */
+  var inspireData = [
+    '沿一条你每天都会经过的街，找出三家开了二十年以上的店，分别拍下它们开门前的十分钟。',
+    '约一位在社区里长期做同一件事的人，只问三个问题：为什么开始、最难的时候、还打算做多久。',
+    '用固定机位记录同一个窗口从早到晚的光线变化，配上当天你听到的三句话。',
+    '选一个常用动作（比如倒水、系鞋带），用三种不同景别各拍一次，剪成一段 40 秒的练习。'
+  ];
+  var inspireOut = document.getElementById('gnInspireOut');
+  document.getElementById('gnInspireChips').addEventListener('click', function(e){
+    var b = e.target.closest('[data-gn-i]');
+    if(!b) return;
+    this.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    var i = parseInt(b.getAttribute('data-gn-i'), 10) || 0;
+    inspireOut.innerHTML = '<b>拍摄线索：</b>' + inspireData[i];
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-gn-count'), 10) || 0;
+    var dur = 1200, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counted = false;
+  function maybeCount(){
+    if(counted) return;
+    var stats = document.querySelectorAll('[data-gn-count]');
+    if(!stats.length) return;
+    var rect = stats[0].getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      counted = true;
+      stats.forEach(animateCount);
+    }
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('gnTopBtn');
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ topBtn.classList.add('show'); } else { topBtn.classList.remove('show'); }
+    maybeCount();
+  }, {passive:true});
+  maybeCount();
+
+  /* ---------- 键盘 Esc ---------- */
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeModal(); searchTip.classList.remove('show'); }
+  });
+
+})();
+</script>
+</body>
+              </html>
